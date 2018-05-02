@@ -7,7 +7,7 @@ BP_DIR=`cd $(dirname $0); cd ..; pwd`
 mkdir -p $BUILD_DIR/.profile.d
 mv $BP_DIR/.profile.d/* $BUILD_DIR/.profile.d
 
-GUNICORN_CONF="$BUILD_DIR/.apt/etc/datadog-agent/conf.d/gunicorn.d/conf.yaml"
+GUNICORN_CONF="$BUILD_DIR/.apt/etc/datadog-agent/conf.d/gunicorn.d/gunicorn.yaml"
 
 if [ -f "$GUNICORN_CONF" ]; then
   echo "-----> $GUNICORN_CONF already exists"
@@ -20,5 +20,5 @@ cat <<EOF > "$GUNICORN_CONF"
 init_config:
 
 instances:
-  - proc_name: YOUR_APP_NAME
+  - proc_name: ruckit
 EOF
