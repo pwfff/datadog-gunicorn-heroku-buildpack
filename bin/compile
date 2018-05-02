@@ -1,0 +1,17 @@
+#!/bin/sh
+
+GUNICORN_CONF="$HOME/.apt/etc/datadog-agent/conf.d/gunicorn.d/conf.yaml"
+
+if [ -f "$GUNICORN_CONF" ]; then
+  echo "-----> $GUNICORN_CONF already exists"
+  exit 1
+fi
+
+echo "-----> Creating $GUNICORN_CONF"
+
+cat <<EOF > "$GUNICORN_CONF"
+init_config:
+
+instances:
+  - proc_name: YOUR_APP_NAME
+EOF

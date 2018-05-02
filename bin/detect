@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# this pack is valid for apps with a hello.txt in the root
+if [ -f "$HOME/.apt/etc/datadog-agent/conf.d/gunicorn.d/" ]; then
+  echo "DatadogGunicornConfigFramework"
+  exit 0
+else
+  exit 1
+fi
