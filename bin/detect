@@ -3,6 +3,13 @@
 BUILD_DIR=$1
 APT_DIR="$BUILD_DIR/.apt"
 
+echo "$BUILD_DIR $APT_DIR"
+ls -al $APT_DIR
+ls -al $APT_DIR/.apt
+ls -al $APT_DIR/.apt/etc
+ls -al $APT_DIR/.apt/etc/datadog-agent
+ls -al $APT_DIR/.apt/etc/datadog-agent/conf.d
+
 if [ -f "$APT_DIR/.apt/etc/datadog-agent/conf.d/gunicorn.d/" ]; then
   echo "DatadogGunicornConfigFramework"
   exit 0
