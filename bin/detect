@@ -1,5 +1,6 @@
 #!/bin/sh
 
+BUILD_DIR=$1
 APT_DIR="$BUILD_DIR/.apt"
 
 if [ -f "$APT_DIR/.apt/etc/datadog-agent/conf.d/gunicorn.d/" ]; then
